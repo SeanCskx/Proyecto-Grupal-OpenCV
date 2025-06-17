@@ -17,14 +17,16 @@ while True:
         print("No se pudo recibir el fotograma. Saliendo...")
         break
 
-    # --- Aquí es donde cada miembro del equipo añadirá su código ---
-    # Tarea 'preprocesamiento': Modificar el frame (ej. convertir a gris)
-    # Tarea 'reconocimiento': Aplicar detección de rostros/ojos al frame
-    # Tarea 'interfaz': Dibujar sobre el frame o cambiar títulos de ventana
-    # ----------------------------------------------------------------
+    # --- INICIO DE LA TAREA 'PREPROCESAMIENTO' ---
+    # Tarea: Convertir el frame a escala de grises
+    gris = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # --- FIN DE LA TAREA 'PREPROCESAMIENTO' ---
 
-    # Mostrar el fotograma en una ventana
-    cv2.imshow("Proyecto Grupal - Webcam", frame)
+    # Mostrar el fotograma original en una ventana
+    cv2.imshow("Original - Proyecto Grupal", frame)
+
+    # Mostrar el fotograma preprocesado (en gris) en otra ventana
+    cv2.imshow("Preprocesamiento (Gris)", gris)
 
     # Esperar por la tecla 'q' para salir del bucle
     if cv2.waitKey(1) & 0xFF == ord('q'):
